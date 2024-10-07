@@ -7,9 +7,13 @@ import modelo.Imagen;
 import modelo.Jugador;
 import modelo.Tablero;
 import modelo.TipoImagen;
-
+/**
+ * Esta clase representa el formulario principal para jugar Tic-Tac-Toe (Tres en Raya).
+ * Se encarga de inicializar los componentes de la interfaz gráfica y gestionar el estado
+ * del juego, incluyendo los jugadores y el tablero.
+ */
 public class FormTikTacToe extends javax.swing.JFrame {
-    
+     // Atributos estáticos para manejar las imágenes, nombres y puntajes de los jugadores
     public static Imagen imgJugadorEquis;
     public static Imagen imgJugadorCirculo;
     public static JLabel nombreJugadorEquis;
@@ -157,19 +161,28 @@ public class FormTikTacToe extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Método que se ejecuta cuando se hace clic en la "X" de cierre. Finaliza la aplicación.
+     * Evento del clic del mouse.
+     */
     private void lblCierreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCierreMouseClicked
         System.exit(0);
     }//GEN-LAST:event_lblCierreMouseClicked
-
+    /**
+     * Método que se ejecuta cuando el cursor del mouse pasa sobre la "X" de cierre.
+     * Cambia el color del texto a rojo.
+     */
     private void lblCierreMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCierreMouseEntered
         lblCierre.setForeground(Color.RED);
     }//GEN-LAST:event_lblCierreMouseEntered
-
+     /**
+     * Método que se ejecuta cuando el cursor del mouse sale de la zona de la "X" de cierre.
+     * Restaura el color original del texto.
+     */
     private void lblCierreMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCierreMouseExited
         lblCierre.setForeground(new Color(240,192,255));
     }//GEN-LAST:event_lblCierreMouseExited
-
+    // Getters y setters para los jugadores
     public Jugador getJugador1() {
         return jugador1;
     }

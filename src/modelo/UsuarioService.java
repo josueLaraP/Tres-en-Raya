@@ -5,6 +5,11 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**Esta clase es para la persistencia de Datos
+ * al momento de registrar se guardara en un archivo txt
+ * @author josue lara
+ */
+
 public class UsuarioService {
     private static final String FILE_PATH = "usuarios.txt";
 

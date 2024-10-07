@@ -7,14 +7,28 @@ import javax.swing.JOptionPane;
 import modelo.Usuario;
 import modelo.UsuarioService;
 
-
+/**
+ * La clase Login crea una interfaz gráfica para el inicio de sesión del usuario.
+ * Permite a los usuarios ingresar su nombre de usuario y contraseña para
+ * acceder a la aplicación, validando estos datos con un servicio de usuario.
+ * Además, proporciona acceso a la ventana de registro si el usuario aún no
+ * tiene una cuenta.
+ */
 public class Login extends javax.swing.JFrame {
 
-    
+    /**
+     * Constructor de la clase Login que inicializa los componentes gráficos.
+     * Configura el tamaño, localización y apariencia general de la ventana.
+     */
     public Login() {
         
         init();
     }
+    /**
+     * Método que configura y personaliza las propiedades básicas de la ventana,
+     * como la posición, la opción de cierre y el comportamiento de redimensionamiento.
+     * También establece que no tendrá decoración visible (sin barra de título).
+     */
     public void init(){
         setUndecorated(true);
         initComponents();
@@ -161,15 +175,24 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Método que se ejecuta cuando el usuario hace clic en la etiqueta de cierre.
+     * Cierra la aplicación.
+     */
     private void lblCierreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCierreMouseClicked
         System.exit(0);
     }//GEN-LAST:event_lblCierreMouseClicked
-
+    /**
+     * Método que se ejecuta cuando el usuario pasa el mouse sobre la etiqueta de cierre.
+     * Cambia el color del texto de la etiqueta a rojo.
+     */
     private void lblCierreMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCierreMouseEntered
         lblCierre.setForeground(Color.RED);
     }//GEN-LAST:event_lblCierreMouseEntered
-
+    /**
+     * Método que se ejecuta cuando el mouse sale de la etiqueta de cierre.
+     * Restablece el color original del texto.
+     */
     private void lblCierreMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCierreMouseExited
         lblCierre.setForeground(new Color(240,192,255));
     }//GEN-LAST:event_lblCierreMouseExited
@@ -201,7 +224,11 @@ public class Login extends javax.swing.JFrame {
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEntrarActionPerformed
-
+ /**
+     * Método que se ejecuta al hacer clic en el botón "ENTRAR".
+     * Verifica si el nombre de usuario y la contraseña ingresados son correctos
+     * a través del servicio de usuario.
+     */
     private void btnEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEntrarMouseClicked
          String nombreIngresado = txtUsuario.getText();         // Nombre de usuario ingresado
     String contraseñaIngresada = new String(Password.getPassword());  // Contraseña ingresada
@@ -220,20 +247,24 @@ public class Login extends javax.swing.JFrame {
             formInicio.setVisible(true);
             dispose();  // Cerrar la ventana actual
         } else {
-            // Si la validación falla, mostrar mensaje de error
-            JOptionPane.showMessageDialog(this, "Usuario/Contraseña incorrecta", "Error de inicio de sesión", JOptionPane.ERROR_MESSAGE);
+            Error error=new Error();
+            error.setVisible(true);
         }
     } catch (IOException e) {
         // En caso de error al acceder al archivo de usuarios, mostrar mensaje de error
-        JOptionPane.showMessageDialog(this, "Error al acceder a los datos de usuarios", "Error", JOptionPane.ERROR_MESSAGE);
-        e.printStackTrace();
+        Error error=new Error();
+            error.setVisible(true);
+
     }
     }//GEN-LAST:event_btnEntrarMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    /**
+     * Método que se ejecuta al hacer clic en el botón "REGISTRARSE".
+     * Abre la ventana de registro de usuario.
+     */
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         Registro registro=new Registro();
         registro.setVisible(true);

@@ -11,7 +11,19 @@ import java.util.TimerTask;
 import javax.swing.JPanel;
 import vista.FormResultado;
 import vista.FormTikTacToe;
-
+/**
+ * La clase Tablero representa el área de juego donde se visualizan los cuadros y los jugadores
+ * interactúan. Se encarga de inicializar el tablero, gestionar el estado de los jugadores, 
+ * y pintar el tablero con colores definidos. El tablero maneja una lista de cuadros que 
+ * forman la estructura del área de juego, así como el jugador actual y el turno de la partida.
+ *
+ * Características principales:
+ * - Establece las dimensiones y colores de las celdas y el tablero.
+ * - Administra los jugadores y su turno en la partida.
+ * - Almacena una lista de cuadros que componen el tablero.
+ *
+ * Esta clase extiende de JPanel para poder dibujar los componentes gráficos del tablero.
+ */
 public class Tablero extends JPanel{
     private int anchoCI;
     private int alturaCI;
@@ -26,10 +38,15 @@ public class Tablero extends JPanel{
     
     private ArrayList<Cuadro> cuadros;
     private Cuadro cuadroFrontal;
-    
+    /**
+     * Constructor de la clase Tablero. Inicializa los valores y jugadores.
+     */
     public Tablero(){
         init();
     }
+     /**
+     * Método init que inicializa los valores por defecto del tablero y los jugadores.
+     */
     private void init(){
         anchoCI=80;
         alturaCI=80;
@@ -42,6 +59,9 @@ public class Tablero extends JPanel{
         jugadorActual = TipoImagen.EQUIS;
         turnoPartida = TipoImagen.EQUIS;
     }
+    /**
+     * Crea el tablero de juego, configurando su tamaño, diseño y cuadros.
+     */
     public void crearTablero(){
         setLayout(null);
         setSize(anchoCI*3+margen*4,alturaCI*3+margen*4);
@@ -54,6 +74,9 @@ public class Tablero extends JPanel{
         crearCuadrosInternos();
         
     }
+     /**
+     * Crea los cuadros internos (las casillas) del tablero y les asigna eventos.
+     */
     private void crearCuadrosInternos(){
         int x = margen;
         int y = margen;
@@ -75,6 +98,10 @@ public class Tablero extends JPanel{
             y+=(alturaCI+margen);
         }
     }
+      /**
+     * Crea los eventos para los cuadros, como los clics para marcar una casilla.
+     *cuadro Cuadro al cual se le asignan los eventos.
+     */
     public void crearEventosCuadro(Cuadro cuadro){
         MouseListener evento = new MouseListener() {
             @Override
@@ -123,6 +150,10 @@ public class Tablero extends JPanel{
         cuadro.addMouseListener(evento);
         
     }
+    /**
+     * Cambia los estilos visuales según el jugador actual.
+     *jugadorAct El jugador actual (EQUIS o CIRCULO).
+     */
     public void cambiarEstilos(TipoImagen jugadorAct){
         if(jugadorAct==TipoImagen.CIRCULO){
             FormTikTacToe.imgJugadorEquis.setRuta(Ruta.JUGADORAUXILLAR);
@@ -142,6 +173,11 @@ public class Tablero extends JPanel{
             FormTikTacToe.nombreJugadorEquis.setForeground(new Color(180,232,255));
         }
     }
+    /**
+     * Muestra el resultado del juego (ganador o empate) y maneja el final de la partida.
+     * tipoImagenResultado El resultado del juego (EMPATE o imagen del ganador).
+     * jugadorGanador El jugador ganador.
+     */
     public void resultado(TipoImagen tipoImagenResultado,TipoImagen jugadorGanador){
           
           if(tipoImagenResultado==TipoImagen.EMPATE){
@@ -175,6 +211,10 @@ public class Tablero extends JPanel{
               timer.schedule(tarea,800);
           }
     }
+     /**
+     * Reinicia el tablero para una nueva partida, actualizando puntajes y el turno.
+     * ganador El jugador ganador de la partida actual.
+     */
     public void reiniciarTablero(TipoImagen ganador){
         desactivarCuadros(false);
         borrarImagenes();
@@ -202,6 +242,9 @@ public class Tablero extends JPanel{
         repaint();
             
     }
+    /**
+     * Desactiva o activa los cuadros, dependiendo del valor booleano.
+     */
     public void desactivarCuadros(boolean valor){
         for(Cuadro cuadro : cuadros){
             cuadro.setDibujado(valor);

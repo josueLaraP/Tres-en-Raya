@@ -9,12 +9,18 @@ import modelo.Ruta;
 import modelo.Tablero;
 import modelo.TipoImagen;
 
-
+/**
+ * La clase FormResultado representa la ventana que muestra el resultado del juego de "Tres en Raya".
+ * Se muestra el ganador y proporciona opciones para cerrar la ventana y reiniciar el tablero.
+ */
 public class FormResultado extends javax.swing.JFrame {
 
     private Tablero tablero;
     private TipoImagen jugadorGanador;
-    
+    /**
+     * Constructor de la clase FormResultado. Inicializa la ventana con los datos
+     * del jugador ganador y el tablero del juego.
+     */
     public FormResultado(TipoImagen jugadorGanador,Tablero tablero) {
         init();
         this.tablero = tablero;
@@ -120,16 +126,25 @@ public class FormResultado extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Evento que se ejecuta al hacer clic en el botón de cierre "X". Cierra la ventana
+     * y reinicia el tablero con los datos del jugador ganador.
+     */
     private void lblCierreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCierreMouseClicked
         dispose();
         tablero.reiniciarTablero(jugadorGanador);
     }//GEN-LAST:event_lblCierreMouseClicked
-
+    /**
+     * Evento que se ejecuta cuando el mouse entra en el área del botón de cierre. Cambia
+     * el color del texto del botón a rojo.
+     */
     private void lblCierreMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCierreMouseEntered
         lblCierre.setForeground(Color.RED);
     }//GEN-LAST:event_lblCierreMouseEntered
-
+     /**
+     * Evento que se ejecuta cuando el mouse sale del área del botón de cierre. Restaura
+     * el color original del texto del botón.
+     */
     private void lblCierreMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCierreMouseExited
         lblCierre.setForeground(new Color(240,192,255));
     }//GEN-LAST:event_lblCierreMouseExited

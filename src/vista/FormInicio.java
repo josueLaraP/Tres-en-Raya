@@ -6,13 +6,23 @@ import javax.swing.BorderFactory;
 import javax.swing.border.Border;
 import modelo.Jugador;
 import modelo.TipoImagen;
-
-
+/**
+ * La clase FormInicio representa la pantalla inicial de un juego de "Tres en Raya".
+ * Permite a los usuarios ingresar los nombres de los jugadores y comenzar el juego.
+ * Está diseñada con una interfaz gráfica personalizada y varios eventos de interacción.
+ */
 public class FormInicio extends javax.swing.JFrame {
-
+     /**
+     * Constructor por defecto que inicializa los componentes y la ventana.
+     */
     public FormInicio() {
         init();
     }
+    /**
+     * Método personalizado para inicializar componentes adicionales y configurar
+     * la ventana con estilo personalizado. Aquí se define el diseño visual, el comportamiento
+     * y se preparan los componentes.
+     */
     public void init(){
         setUndecorated(true);
         initComponents();
@@ -267,22 +277,42 @@ public class FormInicio extends javax.swing.JFrame {
             evt.consume();
         
     }//GEN-LAST:event_txtJugador1KeyTyped
-
+    /**
+ * Maneja el evento de escritura en el campo de texto para el segundo jugador.
+ * Convierte el carácter ingresado a mayúsculas y limita el número de caracteres
+ * a un máximo de 8. Si se supera el límite, el evento se consume, evitando
+ * que se ingresen más caracteres.
+ */
     private void txtJugador2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtJugador2KeyTyped
         char caracter = Character.toUpperCase(evt.getKeyChar());
         evt.setKeyChar(caracter);
         if(txtJugador2.getText().length()>=8)
             evt.consume();  
     }//GEN-LAST:event_txtJugador2KeyTyped
-
+    /**
+ * Cambia el color de fondo del panel del botón al pasar el ratón sobre
+ * la etiqueta para iniciar el juego. Esto proporciona una retroalimentación
+ * visual al usuario, indicando que el botón es interactivo.
+ */
     private void lblInicarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblInicarMouseEntered
         panelBoton.setBackground(new Color(126,49,196));
     }//GEN-LAST:event_lblInicarMouseEntered
-
+/**
+ * Restaura el color de fondo del panel del botón cuando el ratón sale
+ * de la etiqueta para iniciar el juego. Esto restablece la apariencia
+ * original del botón.
+ */
     private void lblInicarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblInicarMouseExited
         panelBoton.setBackground(new Color(42,22,79));
     }//GEN-LAST:event_lblInicarMouseExited
-
+    /**
+ * Maneja el evento de presión del ratón en la etiqueta para iniciar el juego.
+ * Al hacer clic, se cierra la ventana actual y se crean dos instancias de
+ * Jugador: una para el primer jugador y otra para el segundo jugador.
+ * Si los campos de texto están vacíos, se asignan nombres predeterminados
+ * a los jugadores. Luego, se crea e inicia el formulario del juego Tic-Tac-Toe
+ * con los jugadores especificados.
+ */
     private void lblInicarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblInicarMousePressed
         this.dispose();
         

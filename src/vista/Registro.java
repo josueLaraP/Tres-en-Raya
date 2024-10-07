@@ -5,14 +5,26 @@ import java.io.IOException;
 import javax.swing.JOptionPane;
 import modelo.Usuario;
 import modelo.UsuarioService;
-
+/**
+ * La clase Registro crea una interfaz gráfica para que los usuarios puedan registrarse en la aplicación.
+ * Permite a los usuarios ingresar un nuevo nombre de usuario y una contraseña, 
+ * validando la información para asegurarse de que se cumplan los requisitos del registro.
+ * Además, se gestiona la persistencia del nuevo usuario a través del servicio de usuarios.
+ */
 public class Registro extends javax.swing.JFrame {
-
+    /**
+     * Constructor de la clase Registro.
+     * Inicializa los componentes gráficos y llama al método init() para configurar la ventana.
+     */
  
     public Registro() {
         
         init();
-        
+     /**
+     * Método que configura las propiedades principales de la ventana.
+     * Establece la ventana sin decoración (sin barra de título), la hace no redimensionable 
+     * y la posiciona en el centro de la pantalla. También inicializa los componentes visuales.
+     */    
     }
     public void init(){
         setUndecorated(true);
@@ -307,7 +319,21 @@ public class Registro extends javax.swing.JFrame {
         login.setVisible(true);
         dispose();        
     }//GEN-LAST:event_jButton2MouseClicked
-
+/**
+ * Evento que se ejecuta cuando el botón de registro (jButton1) es presionado.
+ * Este método permite registrar un nuevo usuario en el sistema.
+ * Funcionalidad:
+ * - Se crea un objeto `Usuario` con los valores ingresados por el usuario en los campos de texto
+ *   para el nombre de usuario y la contraseña.
+ * - Se instancia un objeto de `UsuarioService` para manejar la lógica de persistencia.
+ * - Intenta registrar el usuario llamando al método `registrarUsuario()` de `UsuarioService`.
+ * - Si el registro es exitoso, se imprime un mensaje en la consola y se muestra la ventana de login.
+ * - Si ocurre un error al registrar el usuario (por ejemplo, problemas con el archivo de persistencia),
+ *   se muestra un mensaje de error utilizando un `JOptionPane`.
+ * 
+ * Finalmente, se cierra la ventana de registro actual y se abre la ventana de login.
+ * El evento de clic que dispara este método.
+ */
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
      Usuario usuario1 = new Usuario();
     usuario1.setNombre(nuevoUsuario.getText());      // Campo de texto para el nombre de usuario

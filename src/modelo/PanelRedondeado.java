@@ -7,12 +7,20 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.geom.RoundRectangle2D;
 import javax.swing.JPanel;
-
+/**
+ * La clase PanelRedondeado extiende de JPanel y permite dibujar un panel con bordes redondeados.
+ * Los arcos que definen las esquinas del panel se pueden personalizar mediante los atributos arcoAncho y arcoAltura.
+ * Además, el color del borde también es configurable.
+ */
 public class PanelRedondeado extends JPanel{
     private double arcoAncho = 50;
     private double arcoAltura = 50;
     private Color colorBorde = new Color(165,40,174);
-
+     /**
+     * Sobreescribe el método paintComponent para dibujar un panel con esquinas redondeadas.
+     * El panel se rellena con el color de fondo establecido y se dibuja un borde con el color especificado.
+     *El objeto Graphics utilizado para renderizar el contenido del panel.
+     */
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g); 
