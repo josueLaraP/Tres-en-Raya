@@ -18,8 +18,10 @@ public class FormResultado extends javax.swing.JFrame {
     private Tablero tablero;
     private TipoImagen jugadorGanador;
     /**
-     * Constructor de la clase FormResultado. Inicializa la ventana con los datos
-     * del jugador ganador y el tablero del juego.
+     * Constructor de la clase FormResultado.Inicializa la ventana con los datos
+ del jugador ganador y el tablero del juego.
+     * @param jugadorGanador
+     * @param tablero
      */
     public FormResultado(TipoImagen jugadorGanador,Tablero tablero) {
         init();
@@ -41,6 +43,11 @@ public class FormResultado extends javax.swing.JFrame {
             lblNombre.setText("EMPATE");
         }
     }
+    /**
+ * Método de inicialización para configurar las propiedades básicas de la ventana.
+ * Se inicializan los componentes gráficos.
+ * Se configura el fondo de la ventana como completamente transparente.
+ */
     public void init(){
         setUndecorated(true);
         initComponents();

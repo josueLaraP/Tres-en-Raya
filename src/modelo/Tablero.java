@@ -23,6 +23,8 @@ import vista.FormTikTacToe;
  * - Almacena una lista de cuadros que componen el tablero.
  *
  * Esta clase extiende de JPanel para poder dibujar los componentes gráficos del tablero.
+  * @version 1.0
+ * @since 2024
  */
 public class Tablero extends JPanel{
     private int anchoCI;
@@ -250,80 +252,156 @@ public class Tablero extends JPanel{
             cuadro.setDibujado(valor);
         }
     }
+    /**
+    * Elimina las imágenes de los cuadros establecidos en el tablero, 
+    * estableciendo su tipo de imagen a null.
+    */
     public void borrarImagenes(){
         for(Cuadro cuadro : cuadros){
             cuadro.setTipoImagen(null);
         }
     }
-
+    /**
+    * Obtiene el jugador actual (ya sea X o O) representado por el tipo de imagen.
+    *
+    * @return El tipo de imagen del jugador actual (EQUIS o CIRCULO).
+    */
     public TipoImagen getJugadorActual() {
         return jugadorActual;
     }
-
+    /**
+    * Establece el jugador actual, especificando su tipo de imagen.
+    *
+    * @param jugadorActual El tipo de imagen del jugador actual (EQUIS o CIRCULO).
+    */
     public void setJugadorActual(TipoImagen jugadorActual) {
         this.jugadorActual = jugadorActual;
     }
-    
+    /**
+ * Obtiene la lista de cuadros que representan las casillas del tablero.
+ *
+ * @return Un ArrayList de objetos Cuadro que representan las casillas del tablero.
+ */
     public ArrayList<Cuadro> getCuadros() {
         return cuadros;
     }
-
+/**
+ * Establece la lista de cuadros que forman el tablero de juego.
+ *
+ * @param cuadros Un ArrayList de objetos Cuadro que representan las casillas del tablero.
+ */
     public void setCuadros(ArrayList<Cuadro> cuadros) {
         this.cuadros = cuadros;
     }
-
+/**
+ * Obtiene el ancho de cada cuadro individual (CI) en el tablero.
+ *
+ * @return El ancho del cuadro en píxeles.
+ */
     public int getAnchoCI() {
         return anchoCI;
     }
-
+/**
+ * Establece el ancho de cada cuadro individual (CI) en el tablero.
+ *
+ * @param anchoCI El ancho del cuadro en píxeles.
+ */
     public void setAnchoCI(int anchoCI) {
         this.anchoCI = anchoCI;
     }
-
+/**
+ * Obtiene la altura de cada cuadro individual (CI) en el tablero.
+ *
+ * @return La altura del cuadro en píxeles.
+ */
     public int getAlturaCI() {
         return alturaCI;
     }
-
+/**
+ * Establece la altura de cada cuadro individual (CI) en el tablero.
+ *
+ * @param alturaCI La altura del cuadro en píxeles.
+ */
     public void setAlturaCI(int alturaCI) {
         this.alturaCI = alturaCI;
     }
-
+/**
+ * Obtiene el margen entre los cuadros del tablero.
+ *
+ * @return El margen entre los cuadros en píxeles.
+ */
     public int getMargen() {
         return margen;
     }
-
+/**
+ * Establece el margen entre los cuadros del tablero.
+ *
+ * @param margen El margen entre los cuadros en píxeles.
+ */
     public void setMargen(int margen) {
         this.margen = margen;
     }
-
+/**
+ * Obtiene el color de fondo del tablero.
+ *
+ * @return Un objeto Color que representa el color de fondo del tablero.
+ */
     public Color getColorTablero() {
         return colorTablero;
     }
-
+/**
+ * Establece el color de fondo del tablero.
+ *
+ * @param colorTablero Un objeto Color que representa el color de fondo del tablero.
+ */
     public void setColorTablero(Color colorTablero) {
         this.colorTablero = colorTablero;
     }
-
+/**
+ * Obtiene el color de los cuadros individuales (CI).
+ *
+ * @return Un objeto Color que representa el color de los cuadros individuales.
+ */
     public Color getColorCI() {
         return colorCI;
     }
-
+/**
+ * Establece el color de los cuadros individuales (CI).
+ *
+ * @param colorCI Un objeto Color que representa el color de los cuadros individuales.
+ */
     public void setColorCI(Color colorCI) {
         this.colorCI = colorCI;
     }
-
+/**
+ * Obtiene el primer jugador del juego.
+ *
+ * @return Un objeto Jugador que representa al jugador 1.
+ */
     public Jugador getJugador1() {
         return jugador1;
     }
-
+/**
+ * Establece el primer jugador del juego.
+ *
+ * @param jugador1 Un objeto Jugador que representa al jugador 1.
+ */
     public void setJugador1(Jugador jugador1) {
         this.jugador1 = jugador1;
     }
-
+/**
+ * Obtiene el segundo jugador del juego.
+ *
+ * @return Un objeto Jugador que representa al jugador 2.
+ */
     public Jugador getJugador2() {
         return jugador2;
     }
-
+/**
+ * Establece el segundo jugador del juego.
+ *
+ * @param jugador2 Un objeto Jugador que representa al jugador 2.
+ */
     public void setJugador2(Jugador jugador2) {
         this.jugador2 = jugador2;
     }

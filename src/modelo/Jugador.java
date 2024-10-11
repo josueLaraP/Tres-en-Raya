@@ -4,8 +4,10 @@ package modelo;
  * La clase Jugador representa a un jugador en el juego de tres en raya.
  * Cada jugador tiene un nombre, un tipo de imagen que lo representa (X o O) y 
  * un tablero que guarda las jugadas que ha realizado.
+ * @version 1.0
+ * @since 2024
  */
-public class Jugador {
+public final class Jugador {
     private String nombre;
     private TipoImagen tipoImagen;
     private int tablero[][];
@@ -18,6 +20,7 @@ public class Jugador {
     }
     /**
      * Constructor que inicializa el jugador con un tipo de imagen específico (X o O).
+     * @param tipoImagen
      */
     public Jugador(TipoImagen tipoImagen){
         this.tipoImagen = tipoImagen;
@@ -25,6 +28,8 @@ public class Jugador {
         limpiar();
     }
     /*Constructor que inicializa al jugador con un nombre y un tipo de imagen.
+     * @param nombre El nombre del jugador.
+     * @param tipoImagen El tipo de imagen (X o O) que representa al jugador.
     */
     public Jugador(String nombre,TipoImagen tipoImagen){
         this.nombre = nombre;
@@ -45,8 +50,8 @@ public class Jugador {
     }
     /**
      * Verifica si el jugador ha hecho un "tres en raya" en alguna de las líneas 
-     * del tablero, y devuelve el tipo de imagen que representa esa línea. 
-     * También verifica si se ha producido un empate.
+     * del tablero, y devuelve el tipo de imagen que representa esa línea.También verifica si se ha producido un empate.
+     * @param jugadorRival
      * @return El tipo de línea formada (horizontal, vertical o diagonal) o 
      *         EMPATE si ningún jugador ha ganado pero el tablero está lleno. 
      *         Devuelve {@code null} si el juego aún no ha terminado.
@@ -75,37 +80,42 @@ public class Jugador {
     }
     /**
      * Obtiene el tablero actual del jugador.
+     * @return 
      */
     public int[][] getTablero() {
         return tablero;
     }
     /**
-     * Establece el tablero del jugador.
-     * Una matriz de enteros de 3x3 que representa el nuevo estado del tablero.
+     * Establece el tablero del jugador.Una matriz de enteros de 3x3 que representa el nuevo estado del tablero.
+     * @param tablero
      */
     public void setTablero(int[][] tablero) {
         this.tablero = tablero;
     }
     /**
      * Obtiene el nombre del jugador.
+     * @return 
      */
     public String getNombre() {
         return nombre;
     }
     /**
      * Establece el nombre del jugador.
+     * @param nombre
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
     /**
      * Obtiene el tipo de imagen que representa al jugador (X o O).
+     * @return 
      */
     public TipoImagen getTipoImagen() {
         return tipoImagen;
     }
     /**
      * Establece el tipo de imagen que representa al jugador (X o O).
+     * @param tipoImagen
      */
     public void setTipoImagen(TipoImagen tipoImagen) {
         this.tipoImagen = tipoImagen;

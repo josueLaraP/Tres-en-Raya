@@ -24,7 +24,13 @@ public class FormTikTacToe extends javax.swing.JFrame {
     private Jugador jugador1;
     private Jugador jugador2;
     private Tablero tablero;
-    
+    /**
+ * Constructor de la clase FormTikTacToe.
+ * Recibe dos objetos Jugador como parámetros y realiza las configuraciones iniciales.
+ *
+ * @param jugador1 El primer jugador (representado por 'X').
+ * @param jugador2 El segundo jugador (representado por 'O').
+ */
     public FormTikTacToe(Jugador jugador1,Jugador jugador2) {
         this.jugador1 = jugador1;
         this.jugador2 = jugador2;
@@ -37,6 +43,9 @@ public class FormTikTacToe extends javax.swing.JFrame {
         puntajeCirculo = lblPuntajeJ2;
         tablero.cambiarEstilos(TipoImagen.EQUIS);
     }
+    /**
+ * Método de inicialización que configura la ventana del juego y el tablero.
+ */
     public void init(){
         setUndecorated(true);
         initComponents();
@@ -182,19 +191,35 @@ public class FormTikTacToe extends javax.swing.JFrame {
     private void lblCierreMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCierreMouseExited
         lblCierre.setForeground(new Color(240,192,255));
     }//GEN-LAST:event_lblCierreMouseExited
-    // Getters y setters para los jugadores
+    /**
+ * Devuelve el primer jugador (representado por 'X').
+ *
+ * @return El objeto Jugador correspondiente al primer jugador.
+ */
     public Jugador getJugador1() {
         return jugador1;
     }
-
+/**
+ * Asigna un nuevo valor para el primer jugador (representado por 'X').
+ *
+ * @param jugador1 El nuevo jugador 1.
+ */
     public void setJugador1(Jugador jugador1) {
         this.jugador1 = jugador1;
     }
-
+/**
+ * Devuelve el segundo jugador (representado por 'O').
+ *
+ * @return El objeto Jugador correspondiente al segundo jugador.
+ */
     public Jugador getJugador2() {
         return jugador2;
     }
-
+/**
+ * Asigna un nuevo valor para el segundo jugador (representado por 'O').
+ *
+ * @param jugador2 El nuevo jugador 2.
+ */
     public void setJugador2(Jugador jugador2) {
         this.jugador2 = jugador2;
     }

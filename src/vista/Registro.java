@@ -26,6 +26,13 @@ public class Registro extends javax.swing.JFrame {
      * y la posiciona en el centro de la pantalla. También inicializa los componentes visuales.
      */    
     }
+    
+     /**
+     * Método que configura y personaliza las propiedades básicas de la ventana,
+     * como la posición, la opción de cierre y el comportamiento de redimensionamiento.
+     * También establece que no tendrá decoración visible (sin barra de título).
+     */
+
     public void init(){
         setUndecorated(true);
         initComponents();

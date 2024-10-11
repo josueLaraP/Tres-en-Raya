@@ -13,7 +13,10 @@ import java.util.List;
 public class UsuarioService {
     private static final String FILE_PATH = "usuarios.txt";
 
-    // Función para registrar un nuevo usuario
+    /** Función para registrar un nuevo usuario
+     * @param usuario
+     * @throws java.io.IOException
+    */
     public void registrarUsuario(Usuario usuario) throws IOException {
         FileWriter fw = new FileWriter(FILE_PATH, true);
         BufferedWriter bw = new BufferedWriter(fw);
@@ -23,7 +26,11 @@ public class UsuarioService {
         pw.close();
     }
 
-    // Función para verificar el inicio de sesión
+    /** Función para verificar el inicio de sesión
+     * @param usuario
+     * @return 
+     * @throws java.io.IOException
+    */
     public boolean iniciarSesion(Usuario usuario) throws IOException {
         FileReader fr = new FileReader(FILE_PATH);
         BufferedReader br = new BufferedReader(fr);
@@ -44,7 +51,10 @@ public class UsuarioService {
         return exito;
     }
 
-    // Para depuración, obtener todos los usuarios
+    /** Para depuración, obtener todos los usuarios
+     * @return 
+     * @throws java.io.IOException
+    */
     public List<Usuario> obtenerUsuarios() throws IOException {
         List<Usuario> usuarios = new ArrayList<>();
         FileReader fr = new FileReader(FILE_PATH);

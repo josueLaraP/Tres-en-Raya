@@ -14,8 +14,8 @@ public class Imagen extends JLabel{
     private String ruta = "";
  /**
      * Sobreescribe el método {@code paintComponent} para dibujar una imagen
-     * en la etiqueta, utilizando una ruta especificada.
-     *  El objeto utilizado para renderizar la imagen.
+     * en la etiqueta, utilizando una ruta especificada.El objeto utilizado para renderizar la imagen.
+     * @param gg
      */
     @Override
     protected void paintComponent(Graphics gg) {
@@ -29,12 +29,14 @@ public class Imagen extends JLabel{
         g.dispose();
     }
 
-    /* Obtiene la ruta actual de la imagen que se debe mostrar en la etiqueta.
+    /** Obtiene la ruta actual de la imagen que se debe mostrar en la etiqueta.
+     * @return 
     */
     public String getRuta() {
         return ruta;
     }
-    /* Establece la ruta de la imagen que debe mostrarse en la etiqueta.
+    /** Establece la ruta de la imagen que debe mostrarse en la etiqueta.
+     * @param ruta
     */ 
     public void setRuta(String ruta) {
         this.ruta = ruta;
